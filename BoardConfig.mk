@@ -117,7 +117,6 @@ BOARD_KERNEL_CMDLINE := \
 
 TARGET_KERNEL_CONFIG := veux_defconfig
 TARGET_KERNEL_SOURCE := kernel/xiaomi/veux
-TARGET_KERNEL_NO_GCC := true
 
 # Global LTO
 TARGET_GLOBAL_LTO := thin
