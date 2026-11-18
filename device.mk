@@ -587,7 +587,7 @@ PRODUCT_PACKAGES += \
 
 # Inherit from proprietary targets
 $(call inherit-product, vendor/xiaomi/veux/veux-vendor.mk)
-$(call inherit-product, vendor/xiaomi/miuicamera-veux/MiuiCamera-veux.mk)
+$(call inherit-product, vendor/xiaomi/camera/MiuiCamera-veux.mk)
 
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
