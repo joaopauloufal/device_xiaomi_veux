@@ -7,3 +7,6 @@ import /odm/etc/build_${ro.boot.board_id}.prop
 
 # Display
 vendor.display.vds_allow_hwc=false
+
+# CameraX extensions
+ro.camerax.extensions.enabled=true
