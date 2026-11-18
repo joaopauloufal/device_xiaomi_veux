@@ -46,8 +46,10 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
         'com.qualcomm.qti.dpm.api@1.0',
+        'libmmosal',
         'vendor.qti.diaghal@1.0',
         'vendor.qti.hardware.fm@1.0',
+        'vendor.qti.hardware.wifidisplaysession@1.0',
         'vendor.qti.imsrtpservice@3.0',
     ): lib_fixup_vendor_suffix,
 }
@@ -87,38 +89,49 @@ def blob_fixup_merge_files(
 
 
 blob_fixups: blob_fixups_user_type = {
-    (
-        'vendor/lib64/libdpps.so',
-        'vendor/lib64/libpowercore.so',
-        'vendor/lib64/libsnapdragoncolor-manager.so',
-        'vendor/lib64/libvideooptfeature.so',
-    ): blob_fixup()
-        .replace_needed('libtinyxml2.so', 'libtinyxml2_1.so'),
     ('odm/etc/build_S88006AA1.prop', 'odm/etc/build_S88007AA1.prop', 'odm/etc/build_S88007EA1.prop', 'odm/etc/build_S88008BA1.prop', 'odm/etc/build_S88106BA1.prop', 'odm/etc/build_S88107BA1.prop'): blob_fixup()
         .regex_replace(r'(?m)^.*marketname.*\n?', '')
         .regex_replace(r'(?m)cert', 'model'),
+    'system_ext/lib64/libwfdservice.so': blob_fixup()
+        .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
     'vendor/etc/camera/camxoverridesettings.txt': blob_fixup()
         .regex_replace('0x10080', '0')
         .regex_replace('0x1F', '0x0'),
+    'vendor/etc/libnfc-pn557.conf': blob_fixup()
+        .call(blob_fixup_merge_files, 'vendor/libnfc-nxp_RF.conf', 'NXP RF', need_tmp_dir=False)
+        .regex_replace('pn553', 'nq-nci'),
     'vendor/lib64/android.hardware.secure_element@1.0-impl.so': blob_fixup()
         .remove_needed('android.hidl.base@1.0.so'),
     ('vendor/lib64/camera/components/com.qti.node.dewarp.so', 'vendor/lib64/camera/components/com.vidhance.node.processing.so'): blob_fixup()
         .replace_needed('libui.so', 'libui-v34.so'),
     'vendor/lib64/camera/components/com.qti.node.mialgocontrol.so': blob_fixup()
         .add_needed('libpiex_shim.so'),
-    'vendor/etc/libnfc-pn557.conf': blob_fixup()
-        .call(blob_fixup_merge_files, 'vendor/libnfc-nxp_RF.conf', 'NXP RF', need_tmp_dir=False)
-        .regex_replace('pn553', 'nq-nci'),
     ('vendor/lib64/libalLDC.so', 'vendor/lib64/libalhLDC.so'): blob_fixup()
         .clear_symbol_version('AHardwareBuffer_allocate')
         .clear_symbol_version('AHardwareBuffer_describe')
         .clear_symbol_version('AHardwareBuffer_lock')
         .clear_symbol_version('AHardwareBuffer_release')
         .clear_symbol_version('AHardwareBuffer_unlock'),
+    ('vendor/lib64/libdpps.so', 'vendor/lib64/libsnapdragoncolor-manager.so'): blob_fixup()
+        .replace_needed('libtinyxml2.so', 'libtinyxml2-v34.so'),
     'vendor/lib64/libgoodixhwfingerprint.so': blob_fixup()
         .replace_needed('libvendor.goodix.hardware.biometrics.fingerprint@2.1.so', 'vendor.goodix.hardware.biometrics.fingerprint@2.1.so'),
+    'vendor/lib64/libqcrilNr.so': blob_fixup()
+        .replace_needed('ro.ril.oem', ''),
     ('vendor/lib64/libwvhidl.so', 'vendor/lib64/mediadrm/libwvdrmengine.so'): blob_fixup()
         .add_needed('libcrypto_shim.so'),
+    'vendor/lib64/hw/com.qti.chi.override.so': blob_fixup()
+        .binary_regex_replace(
+            b'persist.vendor.camera.clientname',
+            b'persist.vendor.camera.pkgname\x00\x00\x00'),
+    'vendor/lib64/hw/camera.qcom.so': blob_fixup()
+        .binary_regex_replace(
+            b'persist.vendor.camera.clientname',
+            b'persist.vendor.camera.pkgname\x00\x00\x00'),
+    'vendor/lib64/com.qti.feature2.rt.so': blob_fixup()
+        .binary_regex_replace(
+            b'persist.vendor.camera.clientname',
+            b'persist.vendor.camera.pkgname\x00\x00\x00'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
