@@ -108,6 +108,7 @@ PRODUCT_PACKAGES += \
 
 # Camera Health
 $(call soong_config_set_bool,camera,override_format_from_reserved,true)
+$(call soong_config_set,camera,package_name,com.xiaomi.sessionparams.clientName)
 
 # Camx overrides
 PRODUCT_COPY_FILES += \
