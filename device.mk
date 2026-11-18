@@ -108,11 +108,10 @@ PRODUCT_PACKAGES += \
 
 # Camera Health
 $(call soong_config_set_bool,camera,override_format_from_reserved,true)
-$(call soong_config_set,camera,package_name,com.xiaomi.sessionparams.clientName)
 
-# CameraX extensions
+# Camx overrides
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/permissions/camerax-vendor-extensions.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/camerax-vendor-extensions.xml
+    $(LOCAL_PATH)/configs/camxoverridesettings.txt:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camxoverridesettings.txt
 
 PRODUCT_PACKAGES += \
     libpiex_shim
@@ -587,7 +586,6 @@ PRODUCT_PACKAGES += \
 
 # Inherit from proprietary targets
 $(call inherit-product, vendor/xiaomi/veux/veux-vendor.mk)
-$(call inherit-product, vendor/xiaomi/camera/MiuiCamera-veux.mk)
 
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
