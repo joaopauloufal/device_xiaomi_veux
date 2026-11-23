@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc205bd8-af34-461f-b3a2-510a22dcef39" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configs/permissions/camerax-vendor-extensions.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/properties/odm.prop" beforeDir="false" afterPath="$PROJECT_DIR$/configs/properties/odm.prop" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/properties/system.prop" beforeDir="false" afterPath="$PROJECT_DIR$/configs/properties/system.prop" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/device.mk" beforeDir="false" afterPath="$PROJECT_DIR$/device.mk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/proprietary-files.txt" beforeDir="false" afterPath="$PROJECT_DIR$/proprietary-files.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
