@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc205bd8-af34-461f-b3a2-510a22dcef39" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/configs/properties/system.prop" beforeDir="false" afterPath="$PROJECT_DIR$/configs/properties/system.prop" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +44,7 @@
     "git-widget-placeholder": "cnb",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/joao/Projetos/device_xiaomi_veux",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "AndroidSdkUpdater"
   }
 }]]></component>
   <component name="TaskManager">
