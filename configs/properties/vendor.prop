@@ -226,7 +226,6 @@ persist.log.tag.FrameTracker=S
 debug.stagefright.c2inputsurface=-1
 vendor.media.target_variant=_blair
 vendor.netflix.bsp_rev=Q4350-32962-1
-media.settings.xml=/vendor/etc/media_profiles_blair.xml
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so

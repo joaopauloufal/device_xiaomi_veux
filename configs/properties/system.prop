@@ -43,3 +43,6 @@ persist.bluetooth.sbc_hd_higher_bitrate=1
 
 # CameraX extensions
 ro.camerax.extensions.enabled=true
+
+# Media
+media.settings.xml=/vendor/etc/media_profiles_blair.xml
