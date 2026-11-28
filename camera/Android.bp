@@ -1,6 +1,9 @@
 cc_library_shared {
     name: "libcamx_veux_shim",
     srcs: ["camx_shim.cpp"],
+    header_libs: [
+        "libhardware_headers",
+    ],
     shared_libs: [
         "liblog",
         "libcamera_metadata",

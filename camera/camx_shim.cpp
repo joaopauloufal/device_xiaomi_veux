@@ -1,6 +1,7 @@
 #include <dlfcn.h>
 #include <log/log.h>
 #include <system/camera_metadata.h>
+#include <system/graphics.h>
 #include <unordered_map>
 #include <vector>
 #include <mutex>
