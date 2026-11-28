@@ -122,6 +122,10 @@ TARGET_GLOBAL_LTO := thin
 TARGET_GLOBAL_OPTIMIZATION := O3
 TARGET_GLOBAL_THINLTO := true
 
+# Shim libs
+TARGET_LD_SHIM_LIBS += \
+    /vendor/bin/hw/android.hardware.camera.provider@2.4-service_64|/vendor/lib64/libcamx_veux_shim.so
+
 # OTA assert
 TARGET_OTA_ASSERT_DEVICE := peux|veux
 
