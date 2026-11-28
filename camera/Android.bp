@@ -1,0 +1,14 @@
+cc_library_shared {
+    name: "libcamx_veux_shim",
+    srcs: ["camx_shim.cpp"],
+    shared_libs: [
+        "liblog",
+        "libcamera_metadata",
+        "libcutils",
+    ],
+    cflags: [
+        "-Wall",
+        "-Werror",
+    ],
+    vendor: true,
+}

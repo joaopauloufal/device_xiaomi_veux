@@ -106,6 +106,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
+# Camera HAL Shim (fix VoIP <720p TFE0 crash)
+PRODUCT_PACKAGES += \
+    libcamx_veux_shim
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/init.camera.veux.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.camera.veux.rc
+
 # Camera Health
 $(call soong_config_set_bool,camera,override_format_from_reserved,true)
 
