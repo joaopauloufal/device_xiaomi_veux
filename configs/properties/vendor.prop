@@ -119,7 +119,8 @@ persist.vendor.btstack.enable.twsplussho=true
 
 # Camera
 camera.disable_zsl_mode=true
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera
+persist.vendor.camera.privapp.list=com.android.camera,org.codeaurora.snapcam,com.whatsapp,com.whatsapp.w4b
+vendor.camera.aux.packagelist=com.android.camera,org.codeaurora.snapcam,com.whatsapp,com.whatsapp.w4b
 
 # Dalvik
 dalvik.vm.dex2oat64.enabled=true
